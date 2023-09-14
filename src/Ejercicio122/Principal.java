@@ -14,5 +14,9 @@ public class Principal {
         cancion2.setDuracion(150);
         cancion2.setFavorita('S');
         cancion2.setDescargada(true);
+        
+        cancion1.adelantarCancion(100, 10);
+        cancion1.imprimirCanciones();
+        System.out.println(cancion1.obtenerTipoCancion());
     }
 }
