@@ -79,9 +79,9 @@ public class Canciones {
         System.out.println("Duracion: " + minutos + ":" + segundos);
     }
     
-    public String obtenerTipoCancion(){
+    public String obtenerTipoCancion(String tipoCancion){
         
-        if (duracion >= 300){
+        if (duracion >= 5){
             return "Larga";
         }else
             return "Normal";
