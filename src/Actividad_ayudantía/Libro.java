@@ -1,24 +1,22 @@
 package Actividad_ayudantía;
 
-import java.util.Scanner;
-
 /**
  *
- * @author Nicolás
+ * @author Nicolás Carmona
  */
 public class Libro {
-    private String titulo,autor,isbn;
+    private String titulo,isbn;
     private int precio;
-    Scanner sc = new Scanner(System.in);
+    private Autor autor;
 
     public Libro() {
     }
 
-    public Libro(String titulo, String autor, int precio, String isbn) {
+    public Libro(String titulo, String isbn, int precio, Autor autor) {
         this.titulo = titulo;
-        this.autor = autor;
         this.precio = precio;
         this.isbn = isbn;
+        this.autor = autor;
     }
 
     public String getTitulo() {
@@ -27,14 +25,6 @@ public class Libro {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public String getAutor() {
-        return autor;
-    }
-
-    public void setAutor(String autor) {
-        this.autor = autor;
     }
 
     public int getPrecio() {
@@ -53,21 +43,23 @@ public class Libro {
         this.isbn = isbn;
     }
 
+    public Autor getAutor() {
+        return autor;
+    }
 
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
 
     @Override
     public String toString() {
-        return "Libro{" + "titulo=" + titulo + ", autor=" + autor + ", precio=" + precio + ", isbn=" + isbn + '}';
+        return "Libro{" + "titulo=" + titulo + ", precio=" + precio + ", isbn=" + isbn + ", autor=" + autor + '}';
     }
-    public void eliminarLibro(String isbn){
-        if(this.isbn.equals(isbn)){
-            setTitulo(" ");
-            setAutor(" ");
-            setPrecio(0);
-            setIsbn(" ");
-            System.out.println("El libro se ha borrado con éxito");
-        }else{
-            System.out.println("El isbn ingresado no pertence a ningún libro");
-        }
+    public void imprimirLibro(){
+        System.out.println("Titulo: " + this.titulo);
+        System.out.println("Nombre del autor: " + this.autor.getNombre()+ " " + this.autor.getApellido());
+        System.out.println("Nacionalidad del autor: " + this.autor.getNacionalidad());
+        System.out.println("ISBN: " + this.isbn);
+        System.out.println("Precio: " + this.precio);
     }
 }
